@@ -49,7 +49,7 @@ float fbm(vec2 p) {
 void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution.xy;
   vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
-  float t = u_time * 0.065;
+  float t = u_time * 0.032;
 
   vec2 q = vec2(
     fbm(p * 0.9 + vec2(0.0, t)),
@@ -71,14 +71,19 @@ void main() {
   float grain = (hash(gl_FragCoord.xy + u_time) - 0.5) * 0.035;
   float vignette = smoothstep(1.18, 0.34, length(p * vec2(0.82, 1.0)));
 
-  float value = paper;
-  value -= ink * 0.68;
-  value -= feather * 0.16;
-  value += fibers * 0.045;
-  value += grain;
-  value = mix(value * 0.72, value, vignette);
+  float density = ink * 0.58;
+  density += feather * 0.12;
+  density += (1.0 - vignette) * 0.08;
+  density -= fibers * 0.025;
+  density -= grain * 0.45;
+  density = clamp(density, 0.0, 0.68);
 
-  gl_FragColor = vec4(vec3(clamp(value, 0.04, 0.96)), 1.0);
+  vec3 paperColor = vec3(0.953, 0.925, 0.847);
+  vec3 inkColor = vec3(0.180, 0.388, 0.600);
+  vec3 surface = paperColor * (0.975 + (paper - 0.88) * 0.22);
+  vec3 color = mix(surface, inkColor, density);
+
+  gl_FragColor = vec4(clamp(color, 0.0, 1.0), 1.0);
 }
 `
 
@@ -147,12 +152,25 @@ void main() {
     let height = 0
     let frame = 0
     let active = true
+    let needsResize = true
+    const maxBufferEdge = 2048
+    const resizeObserver =
+      typeof window.ResizeObserver === "function"
+        ? new window.ResizeObserver(() => {
+            needsResize = true
+          })
+        : null
     const startedAt = performance.now()
+
+    resizeObserver?.observe(canvas)
 
     function cleanup() {
       if (!active) return
       active = false
       cancelAnimationFrame(frame)
+      resizeObserver?.disconnect()
+      gl.deleteBuffer(positionBuffer)
+      gl.deleteProgram(program)
       delete canvas.dataset.inkShaderStarted
     }
 
@@ -161,9 +179,19 @@ void main() {
     }
 
     function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      const nextWidth = Math.max(1, Math.floor(canvas.clientWidth * dpr))
-      const nextHeight = Math.max(1, Math.floor(canvas.clientHeight * dpr))
+      if (resizeObserver && !needsResize) return
+      needsResize = false
+
+      const cssWidth = Math.max(1, Math.round(canvas.clientWidth))
+      const cssHeight = Math.max(1, Math.round(canvas.clientHeight))
+      const requestedDpr = Math.min(window.devicePixelRatio || 1, 1.5)
+      const safeScale = Math.min(
+        requestedDpr,
+        maxBufferEdge / cssWidth,
+        maxBufferEdge / cssHeight,
+      )
+      const nextWidth = Math.max(1, Math.floor(cssWidth * safeScale))
+      const nextHeight = Math.max(1, Math.floor(cssHeight * safeScale))
 
       if (nextWidth !== width || nextHeight !== height) {
         width = nextWidth
@@ -181,6 +209,7 @@ void main() {
         return
       }
 
+      if (!resizeObserver) needsResize = true
       resize()
       gl.useProgram(program)
       gl.enableVertexAttribArray(positionLocation)

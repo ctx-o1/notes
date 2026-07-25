@@ -2,19 +2,13 @@
 title: re:ctx
 ---
 
-<section class="index-hero" aria-label="Animated ink diffusion shader">
-  <canvas class="index-hero__canvas" data-ink-shader aria-hidden="true"></canvas>
-</section>
-
-_Nothing amazing ever happens here. Everything is ordinary._
-
-
-#### *Read log*
-𓆝 𓆟 𓆞
 
 
 
-- [x] [Understanding Neural ODE's - Jonty Sinai](https://jontysinai.github.io/jekyll/update/2019/01/18/understanding-neural-odes.html)
+### Read log
+
+
+[Understanding Neural ODE's - Jonty Sinai](https://jontysinai.github.io/jekyll/update/2019/01/18/understanding-neural-odes.html)
 
 > Euler’s method is a discretisation of the continuous relationship between the input and output domains of the data. 
 > Neural networks are also discretisations of this continuous relationship, only the discretisation is **through hidden states in a latent space**.
@@ -29,7 +23,7 @@ $$
 
 Honestly a cool idea. I will write a more detailed note on this after reading the paper.
 
-- [x] [Scaling Laws, Carefully | Lil'Log](https://lilianweng.github.io/posts/2026-06-24-scaling-laws/) *
+[Scaling Laws, Carefully | Lil'Log](https://lilianweng.github.io/posts/2026-06-24-scaling-laws/) *
 
 
 [Kaplan](https://arxiv.org/abs/2001.08361) and [Chinchilla](https://arxiv.org/abs/2203.15556) both assume Data-Infinite regions i.e. "effectively _unlimited unique data_, no repetition, and no multi-epoch training". 
@@ -37,14 +31,12 @@ Honestly a cool idea. I will write a more detailed note on this after reading th
 
 I will write a more detailed note on current 'Why scaling follow a power law?' hypotheses later. 
 
-- [x] [Quo vadis, LLM benchmarks?](https://florianbrand.com/posts/benches-2026)
+[Quo vadis, LLM benchmarks?](https://florianbrand.com/posts/benches-2026)
 
 A good benchark is fair to the models. Benchmarks should elicit model's capabilities to fullest for evaluation. Similar concerns to Noam Brown's [article](https://x.com/polynoamial/status/2064210146558136827) for test-time scaling compute. 
 
 
-- [x] [When AI Starts Writing Systems Code \| Core Automation](https://www.coreauto.com/blog/when-ai-starts-writing-systems-code) *
-	- [ ] [Reward Hacking in KernelBench - Sinatras](https://blog.sinatras.dev/Reward+Hacking+in+KernelBench)
-	- [ ] [KernelGuard - Sinatras](https://blog.sinatras.dev/KernelGuard)
+[When AI Starts Writing Systems Code \| Core Automation](https://www.coreauto.com/blog/when-ai-starts-writing-systems-code) *
 
 Models can write [competetive](https://x.com/marksaroufim/status/2009497284418130202?s=20) kernels now. But reward hacking is a bigger problem now than one could imagine. Some really good examples of reward hacking. 
 
@@ -53,7 +45,7 @@ Models can write [competetive](https://x.com/marksaroufim/status/200949728441813
 
 Hints at what [Core Automation](https://www.coreauto.com/) is doing. Some inspirations from Adversarial training, although a *clarification* at end that they're still using transformers. 
 
-- [x] [The Second Half - Shunyu Yao - 姚顺雨](https://ysymyth.github.io/The-Second-Half/) *
+[The Second Half - Shunyu Yao - 姚顺雨](https://ysymyth.github.io/The-Second-Half/) *
 
 
 Why RL didn't work before? Why RL works now? ***Priors***.  
@@ -67,7 +59,7 @@ But "*If novel methods are no longer needed and harder benchmarks will just get 
 > The second half of AI will shift focus from solving problems to defining problems. In this new era, evaluation becomes more important than training.
 
 
-- [x] [Scaling Laws, Honestly | Diogo Almeida](https://x.com/CompleteSkeptic/status/2073442518117884197)
+[Scaling Laws, Honestly | Diogo Almeida](https://x.com/CompleteSkeptic/status/2073442518117884197)
 
 Kaplan et al. trained all models on the fixed amount of data (~130B tokens) and used a learning rate schedule that zeroes. Former caused big models to not get enough data and later caused models to not train enough.
 
@@ -76,16 +68,12 @@ Kaplan et al. trained all models on the fixed amount of data (~130B tokens) and 
 
 Labs' equity vortex drying academia, closed research and not acknowledging wrong results... is a sad state of affairs.
 
-- [x] [LSA LongCat Sparse Attention - arjunkocher](https://www.k-a.in/LSA.html)
+[LSA LongCat Sparse Attention - arjunkocher](https://www.k-a.in/LSA.html)
 
 The indexer becomes the bottleneck in sparse attention; Meituan LSA focuses on this bottleneck and introduces three **orthogonal** optimizations to indexer.
 
 
-- [x] [A brief history of distillation in AI | Sergio Paniego](https://x.com/SergioPaniego/status/2073066275819991472?s=20)
-  - [x] [Distilling the Knowledge in a Neural Network](https://huggingface.co/papers/1503.02531)
-  - [ ] [Alpaca: A Strong, Replicable Instruction-Following Model](https://crfm.stanford.edu/2023/03/13/alpaca.html)
-  - [ ] [Self-Instruct: Aligning Language Model with Self Generated Instructions](https://huggingface.co/papers/2212.10560)
-  - [ ] [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://huggingface.co/papers/2306.13649)
+[A brief history of distillation in AI | Sergio Paniego](https://x.com/SergioPaniego/status/2073066275819991472?s=20)
 
 TL;DR Distillation gives a better training signal than hard labels.
 > ... line between distillation, supervised fine-tuning, reinforcement learning and synthetic data is getting blurry.

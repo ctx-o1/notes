@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: re:ctx
+  pageTitle: "rogue notes on ml & maths"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -16,30 +16,35 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Newsreader
-      body: Inter
-      code: JetBrains Mono
+      header:
+        name: Aoboshi One
+        weights: [400]
+      body:
+        name: Shippori Mincho
+        weights: [400, 600]
+        includeItalic: false
+      code: Fragment Mono
     colors:
       lightMode:
-        light: "#fbfaf6"
-        lightgray: "#e9e2d8"
-        gray: "#b7aca0"
-        darkgray: "#3f413f"
-        dark: "#222322"
-        secondary: "#7a3d2b"
-        tertiary: "#2f6f64"
-        highlight: rgba(122, 61, 43, 0.12)
-        textHighlight: "#fff23688"
+        light: "#f3ecd8"
+        lightgray: "#dce2e2"
+        gray: "#93a8b8"
+        darkgray: "#3d5f83"
+        dark: "#254d7c"
+        secondary: "#2e6399"
+        tertiary: "#9b5948"
+        highlight: rgba(46, 99, 153, 0.12)
+        textHighlight: "#e4c96a66"
       darkMode:
-        light: "#171716"
-        lightgray: "#353331"
-        gray: "#77706a"
-        darkgray: "#d9d2ca"
-        dark: "#f0ede7"
-        secondary: "#d08a73"
-        tertiary: "#8bbeb3"
-        highlight: rgba(208, 138, 115, 0.16)
-        textHighlight: "#b3aa0288"
+        light: "#141b24"
+        lightgray: "#263542"
+        gray: "#71879a"
+        darkgray: "#bdcbd5"
+        dark: "#e7e0cd"
+        secondary: "#89afd2"
+        tertiary: "#d19a7f"
+        highlight: rgba(137, 175, 210, 0.14)
+        textHighlight: "#c9ad4f55"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -99,7 +104,7 @@ plugins:
     enabled: false
     order: 92
   - source: github:quartz-community/fonts
-    enabled: true
+    enabled: false
   - source: github:quartz-community/remove-draft
     enabled: true
   - source: github:quartz-community/explicit-publish
@@ -143,7 +148,7 @@ plugins:
   - source: github:quartz-community/tag-page
     enabled: true
   - source: github:quartz-community/explorer
-    enabled: true
+    enabled: false
     options:
       folderDefaultState: open
       folderClickBehavior: link
@@ -157,7 +162,7 @@ plugins:
       position: right
       priority: 10
   - source: github:quartz-community/search
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 20
@@ -186,9 +191,12 @@ plugins:
       position: beforeBody
       priority: 30
   - source: github:quartz-community/page-title
-    enabled: false
-  - source: github:quartz-community/darkmode
     enabled: true
+    layout:
+      position: left
+      priority: 10
+  - source: github:quartz-community/darkmode
+    enabled: false
     layout:
       position: left
       priority: 30

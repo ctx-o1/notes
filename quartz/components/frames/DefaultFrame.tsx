@@ -23,6 +23,18 @@ export const DefaultFrame: PageFrame = {
   }: PageFrameProps) {
     return (
       <>
+        {componentData.fileData.slug === "index" && (
+          <section class="homepage-masthead" aria-labelledby="homepage-masthead-title">
+            <header class="homepage-masthead__title">
+              <span class="homepage-masthead__kicker">I/O · ML-01</span>
+              <h1 id="homepage-masthead-title">{componentData.cfg.pageTitle}</h1>
+              <p>field notes / models / systems</p>
+            </header>
+            <div class="index-hero" aria-label="Animated ink diffusion shader">
+              <canvas class="index-hero__canvas" data-ink-shader aria-hidden="true"></canvas>
+            </div>
+          </section>
+        )}
         <div class="left sidebar">
           {left.filter(Boolean).map((BodyComponent) => (
             <BodyComponent {...componentData} />
