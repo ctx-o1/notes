@@ -26,9 +26,9 @@ export const DefaultFrame: PageFrame = {
         {componentData.fileData.slug === "index" && (
           <section class="homepage-masthead" aria-labelledby="homepage-masthead-title">
             <header class="homepage-masthead__title">
-              <span class="homepage-masthead__kicker">I/O · ML-01</span>
+              <span class="homepage-masthead__kicker">Re/ctx · ctx-o1</span>
               <h1 id="homepage-masthead-title">{componentData.cfg.pageTitle}</h1>
-              <p>field notes / models / systems</p>
+              <p>papers / models / systems </p>
             </header>
             <div class="index-hero" aria-label="Animated ink diffusion shader">
               <canvas class="index-hero__canvas" data-ink-shader aria-hidden="true"></canvas>
@@ -65,6 +65,16 @@ export const DefaultFrame: PageFrame = {
           {right.filter(Boolean).map((BodyComponent) => (
             <BodyComponent {...componentData} />
           ))}
+          {componentData.fileData.slug === "index" && (
+            <div class="homepage-editorial-plates" aria-label="Editorial image plates">
+              <figure class="homepage-editorial-patch">
+                <img
+                  src="./static/scaling-field-plate.png"
+                  alt="Scaling-field study with rising curves and layered blocks"
+                />
+              </figure>
+            </div>
+          )}
         </div>
         {Footer && <Footer {...componentData} />}
       </>

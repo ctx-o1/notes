@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "rogue notes on ml & maths"
+  pageTitle: "notes on machine learning"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true

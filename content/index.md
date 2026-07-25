@@ -17,16 +17,13 @@ Hidden state updates with residual conenctions $h_{t+1} = h_t + f(h_t, \theta_t)
 Neural ODE parameterize the hidden states using an ordinary differential equation.
 This gives us *Continuos Hidden States*.
 
-$$ 
-\frac{dh(t)}{dt} = f_\theta(h(t), t)  
-$$
 
 Honestly a cool idea. I will write a more detailed note on this after reading the paper.
 
 [Scaling Laws, Carefully | Lil'Log](https://lilianweng.github.io/posts/2026-06-24-scaling-laws/) *
 
 
-[Kaplan](https://arxiv.org/abs/2001.08361) and [Chinchilla](https://arxiv.org/abs/2203.15556) both assume Data-Infinite regions i.e. "effectively _unlimited unique data_, no repetition, and no multi-epoch training". 
+Kaplan and Chinchilla both assume Data-Infinite regions i.e. "effectively _unlimited unique data_, no repetition, and no multi-epoch training". 
 [Hernandez et al. (2022)](https://arxiv.org/abs/2205.10487), [Muennighoff et al. (2023)](https://arxiv.org/abs/2305.16264) and recently [Lovelace et al. (2026)](https://arxiv.org/abs/2605.01640) model scaling law experiments for finite data with real world constraints.
 
 I will write a more detailed note on current 'Why scaling follow a power law?' hypotheses later. 
