@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "notes on machine learning"
+  pageTitle: "Notes on Machine\u00a0Learning"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: ctx-0.github.io/notes
+  baseUrl: ctx-o1.github.io/notes
   ignorePatterns:
     - private
     - templates

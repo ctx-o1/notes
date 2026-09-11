@@ -812,33 +812,16 @@ body[data-slug="index"] .page > #quartz-body {
   background: transparent;
 }
 
-.homepage-masthead__kicker {
-  color: var(--secondary);
-  font-family: var(--codeFont);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .homepage-masthead__title h1 {
-  max-width: 8ch;
+  max-width: 9em;
   margin: auto 0;
   color: var(--dark);
-  font-family: var(--headerFont);
-  font-size: clamp(2rem, 3.5vw, 3.85rem);
+  font-family: var(--bodyFont);
+  font-size: clamp(2rem, 2.2vw, 2.2rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
-}
-
-.homepage-masthead__title p {
-  margin: 0;
-  color: var(--secondary);
-  font-family: var(--codeFont);
-  font-size: 0.58rem;
-  letter-spacing: 0.09em;
-  line-height: 1.4;
-  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  text-wrap: balance;
 }
 
 .homepage-masthead .index-hero {
