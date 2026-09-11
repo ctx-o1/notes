@@ -1,3 +1,9 @@
+# Third-party notices
+
+This website is built with Quartz, which is distributed under the following license:
+
+## Quartz
+
 MIT License
 
 Copyright (c) 2021 jackyzha0
@@ -19,3 +25,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Other bundled components and dependencies retain the licenses stated in their source files and package metadata.

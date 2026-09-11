@@ -790,6 +790,18 @@ body[data-slug="index"] .page > #quartz-body {
     "grid-sidebar-left grid-footer grid-sidebar-right";
 }
 
+.site-copyright {
+  padding: 1.5rem 2rem 2.25rem;
+  color: var(--gray);
+  font-family: var(--codeFont);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.site-copyright p {
+  margin: 0;
+}
+
 .homepage-masthead {
   display: grid;
   grid-area: grid-home-masthead;

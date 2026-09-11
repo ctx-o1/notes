@@ -1,5 +1,6 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import CopyrightFooter from "../CopyrightFooter"
 
 const Header = HeaderConstructor()
 
@@ -45,6 +46,7 @@ export const FullWidthFrame: PageFrame = {
           </div>
         </div>
         {Footer && <Footer {...componentData} />}
+        <CopyrightFooter {...componentData} />
       </>
     )
   },
