@@ -976,7 +976,9 @@ body[data-slug="index"] .page > #quartz-body .sidebar .page-title {
   }
 
   .homepage-masthead__title {
-    display: none;
+    display: flex;
+    padding: 0.5rem 0.8rem 0.75rem;
+    border-right: 0;
   }
 
   .homepage-editorial-plates {
@@ -1010,10 +1012,6 @@ body[data-slug="index"] .page > #quartz-body .sidebar .page-title {
 
   .homepage-masthead .index-hero::before {
     right: 0.8rem;
-  }
-
-  body[data-slug="index"] .page > #quartz-body .sidebar .page-title {
-    display: block;
   }
 
   body[data-slug="index"] .page > #quartz-body .sidebar.left {
