@@ -234,6 +234,7 @@ plugins:
       position: left
       priority: 60
       display: desktop-only
+      condition: index
   - source: github:quartz-community/recent-notes
     enabled: true
     options:
@@ -245,6 +246,7 @@ plugins:
       position: afterBody
       priority: 80
       display: mobile-only
+      condition: index
   - source: github:quartz-community/spacer
     enabled: true
     options: {}
