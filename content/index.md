@@ -1,5 +1,7 @@
 ---
-title: re:ctx
+title: Notes on Machine Learning
+socialImage: og-image.png
+description: Rogue notes on large language models & reinforcement learning.
 ---
 
 ## Read log
@@ -82,7 +84,3 @@ TL;DR Distillation gives a better training signal than hard labels.
 
 
 ---
-
-
-<script src="./static/ink-shader.js"></script>
-

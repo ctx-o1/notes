@@ -29,8 +29,13 @@ export default (() => {
     const faviconPngPath = joinSegments(baseDir, "static/favicon-96x96.png")
 
     // Url of current page
+    const isFolderIndex = /(^|\/)index$/.test(fileData.slug!)
+    const pageSlug = fileData.slug!.replace(/(^|\/)index$/, "")
     const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+      fileData.slug === "404"
+        ? url.toString()
+        : joinSegments(url.toString(), pageSlug) + (isFolderIndex && pageSlug ? "/" : "")
+    const canonicalUrl = isFolderIndex && !pageSlug ? `${socialUrl}/` : socialUrl
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,
@@ -63,7 +68,7 @@ export default (() => {
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="og:site_name" content={cfg.pageTitle}></meta>
+        <meta property="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -86,9 +91,10 @@ export default (() => {
 
         {cfg.baseUrl && (
           <>
-            <meta property="twitter:domain" content={cfg.baseUrl}></meta>
-            <meta property="og:url" content={socialUrl}></meta>
-            <meta property="twitter:url" content={socialUrl}></meta>
+            <meta name="twitter:domain" content={cfg.baseUrl}></meta>
+            <meta property="og:url" content={canonicalUrl}></meta>
+            {fileData.slug !== "404" && <link rel="canonical" href={canonicalUrl} />}
+            <meta name="twitter:url" content={canonicalUrl}></meta>
           </>
         )}
 

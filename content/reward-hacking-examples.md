@@ -1,5 +1,6 @@
 ---
 title: Some Reward Hacking Examples
+description: A growing collection of reward hacking examples from LLMs and coding agents in the wild.
 ---
 
 A growing collection of reward hacking examples I come across. 

@@ -359,7 +359,7 @@ input {
 .page > #quartz-body .center {
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 0 2.15rem 4rem;
+  padding: 0 2.15rem 2rem;
   background: transparent;
 }
 
@@ -380,18 +380,6 @@ input {
 .page-header {
   position: relative;
   padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--manual-line);
-}
-
-.page-header::after {
-  position: absolute;
-  right: 0;
-  bottom: 0.3rem;
-  content: "TECHNICAL NOTE / re:ctx";
-  color: color-mix(in srgb, var(--secondary) 68%, transparent);
-  font-family: var(--codeFont);
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
 }
 
 .article-title {
@@ -419,15 +407,6 @@ input {
   line-height: 1.16;
 }
 
-.page > #quartz-body .sidebar .page-title::before {
-  display: block;
-  margin-bottom: 0.4rem;
-  content: "ctx-o1";
-  color: color-mix(in srgb, var(--secondary) 62%, transparent);
-  font-family: var(--codeFont);
-  font-size: 0.55rem;
-  letter-spacing: 0.11em;
-}
 
 .page > #quartz-body .sidebar .page-title > a {
   padding: 0;
@@ -830,8 +809,47 @@ body[data-slug="index"] .page > #quartz-body {
   letter-spacing: 0.04em;
 }
 
+.site-copyright {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: last baseline;
+  justify-content: space-between;
+  gap: 0.6rem 2rem;
+  line-height: 1.6;
+}
+
+// Align the footer with the text column (.center has 2.15rem side padding)
+// and stop it overflowing the viewport on phones.
+.page > #quartz-body footer.site-copyright {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: none;
+  margin: 1.5rem 2.15rem 0;
+  padding: 1.25rem 0 2.25rem;
+}
+
+@media all and ($mobile) {
+  .page > #quartz-body footer.site-copyright {
+    margin: 1rem 0.85rem 0;
+    padding-bottom: 1.75rem;
+  }
+}
+
 .site-copyright p {
   margin: 0;
+}
+
+.site-copyright a {
+  color: var(--darkgray);
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gray) 50%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+.site-copyright a:hover {
+  color: var(--secondary);
+  text-decoration-color: currentColor;
 }
 
 .homepage-masthead {
@@ -993,7 +1011,7 @@ body[data-slug="index"] .page > #quartz-body .sidebar .page-title {
   }
 
   .page > #quartz-body .center {
-    padding: 0 0.85rem 3rem;
+    padding: 0 0.85rem 1.5rem;
   }
 
   .page > #quartz-body .sidebar.left {
@@ -1077,14 +1095,6 @@ body[data-slug="index"] .page > #quartz-body .sidebar .page-title {
     padding-bottom: 0;
     border-bottom: 0;
     font-size: 0.95rem;
-  }
-
-  .page > #quartz-body .sidebar .page-title::before {
-    display: none;
-  }
-
-  .page-header::after {
-    display: none;
   }
 
   article h2 {
