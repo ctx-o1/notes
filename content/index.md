@@ -19,7 +19,6 @@ This gives us *Continuous Hidden States*.
 
 
 
-Honestly a cool idea. I will write a more detailed note on this after reading the paper.
 
 [Scaling Laws, Carefully | Lil'Log](https://lilianweng.github.io/posts/2026-06-24-scaling-laws/)
 
@@ -27,7 +26,6 @@ Honestly a cool idea. I will write a more detailed note on this after reading th
 Kaplan and Chinchilla both assume data-infinite regimes, i.e., "effectively _unlimited unique data_, no repetition, and no multi-epoch training".
 [Hernandez et al. (2022)](https://arxiv.org/abs/2205.10487), [Muennighoff et al. (2023)](https://arxiv.org/abs/2305.16264), and, recently, [Lovelace et al. (2026)](https://arxiv.org/abs/2605.01640) model scaling-law experiments for finite data with real-world constraints.
 
-I will write a more detailed note on current hypotheses about why scaling follows a power law later.
 
 [Quo vadis, LLM benchmarks?](https://florianbrand.com/posts/benches-2026)
 
