@@ -8,14 +8,14 @@ description: Rogue notes on large language models & reinforcement learning.
 
 
 
-[Understanding Neural ODEs - Jonty Sinai](https://jontysinai.github.io/jekyll/update/2019/01/18/understanding-neural-odes.html)
+<!-- [Understanding Neural ODEs - Jonty Sinai](https://jontysinai.github.io/jekyll/update/2019/01/18/understanding-neural-odes.html)
 
 > Euler’s method is a discretisation of the continuous relationship between the input and output domains of the data.
 > Neural networks are also discretisations of this continuous relationship, only the discretisation is **through hidden states in a latent space**.
 
 Hidden state updates with residual connections $h_{t+1} = h_t + f(h_t, \theta_t)$ can be viewed as *Euler discretization of a continuous transformation*. This is the intuition behind Neural ODEs.
 Neural ODEs parameterize the continuous dynamics of the hidden states using an ordinary differential equation.
-This gives us *Continuous Hidden States*.
+This gives us *Continuous Hidden States*. -->
 
 
 
